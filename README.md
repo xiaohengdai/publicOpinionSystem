@@ -2,7 +2,7 @@
 **系统总共分为以下几个部分**
 - 爬App应用市场评分
 - 对评分内容进行数据清洗
-- 将相关数据存库
+- 将相关数据写入csv文件
 - 将应用市场评分自动生成三个分类的词库，好评/中性/差评
 - 对词库采取合适的分词策略
 - 用LSTM训练模型，学习demo:https://github.com/xiaohengdai/SentimentAnalysis
