@@ -1,4 +1,4 @@
-from util.reptile import Reptile
+from util.Reptile import Reptile
 
 rep=Reptile()
 kmallAppId="1188224117"

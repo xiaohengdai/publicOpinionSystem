@@ -1,6 +1,8 @@
 import requests
 import json
 
+from data.WriteData import writeCsvFile
+
 
 class Reptile():
     def getAppstoreUserCommentData(self, pageNum, appId):
@@ -38,6 +40,7 @@ class Reptile():
                     userName = dataEntryJson[j]['author']['name']
                     userNameList.append(userName)
                     print("userName:", userName)
+                    writeCsvFile(rating,content,"rating.csv")
             else:
                 print("不存在")
                 print("评价总共len(ratinList):"+str(len(ratinList))+"条")
