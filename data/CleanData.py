@@ -25,5 +25,26 @@ def cleanData(csv_file_name):
     df = df.dropna(subset=['comment'])
     df.reset_index(drop=True, inplace=True)
     # print("df:",df)
-    df.to_csv(os.path.join(PROJECTDIR, "data", "clear_data_" + csv_file_name), index=False, encoding='utf-8')
-cleanData("iOS_微信_rating.csv")
+    # print(df[(df.rating==1)|(df.rating==2)].index.tolist())#获取满足条件的索引
+    #
+    # print(df[(df.rating == 1) | (df.rating == 2)])#获取满足条件的行
+    #数据分类
+    negativeDf=df[(df.rating == 1) | (df.rating == 2)]
+    neutralDf=df[(df.rating == 3)]
+    positiveDf=df[(df.rating == 4) | (df.rating == 5)]
+    negativeDf.reset_index(drop=True, inplace=True)
+    neutralDf.reset_index(drop=True, inplace=True)
+    positiveDf.reset_index(drop=True,inplace=True)
+    negativeCommentDf=negativeDf['comment']
+    neutralCommentDf=neutralDf['comment']
+    positiveCommentDf=positiveDf['comment']
+    print(negativeCommentDf)
+
+
+    # print("a:",a)
+    # print("df:",df)
+    negativeCommentDf.to_csv(os.path.join(PROJECTDIR, "data", "negativeComment_" + csv_file_name), index=False, encoding='utf-8')
+    neutralCommentDf.to_csv(os.path.join(PROJECTDIR, "data", "neutralComment_" + csv_file_name), index=False, encoding='utf-8')
+    positiveCommentDf.to_csv(os.path.join(PROJECTDIR, "data", "positiveComment_" + csv_file_name), index=False, encoding='utf-8')
+    # df.to_csv(os.path.join(PROJECTDIR, "data", "clean_data_" + csv_file_name), index=False, encoding='utf-8')
+# cleanData("iOS_微信_rating.csv")

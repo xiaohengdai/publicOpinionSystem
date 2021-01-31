@@ -11,7 +11,7 @@
 ```
 （pandas）评论数据清洗：https://blog.csdn.net/qq_43965708/article/details/110884444
 ```
-- 将应用市场评分自动生成三个分类的词库，好评/中性/差评
+- 数据分类，将应用市场评分自动生成三个分类的词库，好评/中性/差评
 - 对词库采取合适的分词策略
 - 用LSTM训练模型，学习demo:https://github.com/xiaohengdai/SentimentAnalysis
 - 从贴吧、微博等其它渠道自动获取到应用数据
