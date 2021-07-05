@@ -11,7 +11,7 @@ chrome_opt.add_argument("--disable-dev-shm-usage")
 
 driver = webdriver.Chrome(executable_path=CHROME_PATH, desired_capabilities=chrome_opt.to_capabilities())
 driver.get("http://www.douban.com")
-driver.switch_to.frame(driver.find_elements_by_tag_name("iframe")[0])
+driver.switch_to.frame(driver.find_elements_by_tag_name("iframe")[0])#切换iframe子框架，因为豆瓣的网页中的登录那部分是一个ifrme，必须切换才能寻找到对应元素
 time.sleep(6)
 driver.find_element_by_class_name('account-tab-account').click()
 # driver.find_element_by_class_name("account-tab-account").click()
