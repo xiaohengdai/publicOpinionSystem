@@ -2,6 +2,7 @@
 **系统总共分为以下几个部分**
 - 爬App应用市场评分
 ```
+chromedriver下载地址:http://chromedriver.storage.googleapis.com/index.html
 遇到问题：
 1、当爬取Appstore上某个应用的第11的评论数据时，会抛后面这个错误：CustomerReviews RSS page depth is limited to 10
 2、爬取七麦数据上的Android应用评论数据，是加密的，如微信：https://api.qimai.cn/andapp/getCommentList?analysis=eEcbVw9UUUBAH1dVTCdYVQlRWBV8WUNEcBMJDlwPAFMGBVMDAHATAQ%3D%3D
