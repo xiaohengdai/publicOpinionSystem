@@ -6,6 +6,7 @@ from data.WriteData import writeCsvFile
 
 class Reptile():
     def getAppstoreUserCommentData(self, pageNum, appId,app_dict):
+        #获取苹果应用市场得分
         ratinList=[]
         contentList=[]
         versionList=[]
@@ -56,3 +57,12 @@ class Reptile():
         print("reponse.content:", reponse.content)
         dataDict=json.loads(reponse.content.decode("utf8"))
         print("dataDict:",dataDict)
+
+    def getHuaWeiAppMarketCommentData(self, app_name,app_id):
+        appIdUrl=f"https://web-drcn.hispace.dbankcloud.cn/uowap/index?method=internal.getTabDetail&serviceType=20&reqPageNum=1&maxResults=25&uri=app%7CC33455&shareTo=&currentUrl=https%253A%252F%252Fappgallery.huawei.com%252Fapp%252FC33455&accessId=&appid={app_id}&zone=&locale=zh"
+        reponse=requests.request("GET",appIdUrl)
+        # print("reponse.content:", reponse.content)
+        dataDict=json.loads(reponse.content.decode("utf8"))
+        # print("dataDict:",dataDict)
+        dataList=dataDict['layoutData'][5]
+        print("dataList:",dataList)
